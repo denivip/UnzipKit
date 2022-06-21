@@ -383,7 +383,8 @@ NS_DESIGNATED_INITIALIZER
     
     NSError *checkExistsError = nil;
     if (![self.fileURL checkResourceIsReachableAndReturnError:&checkExistsError]) {
-        UZKLogError("File %{public}@ doesn't exist: %{public}@", self.fileURL, checkExistsError);
+	// Normal file-existibility check
+        UZKLogInfo("File %{public}@ doesn't exist: %{public}@", self.fileURL, checkExistsError);
         return @[];
     }
     
