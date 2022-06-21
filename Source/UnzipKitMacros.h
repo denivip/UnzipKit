@@ -88,10 +88,10 @@ extern BOOL unzipkitIsAtLeast10_13SDK; // Declared in UZKArchive.m
     NSLog(_removeLogFormatTokens(format), ##__VA_ARGS__); \
     _Pragma( _stringify( clang diagnostic pop ) )
 
-// All levels do the same thing
-#define UZKLog(format, ...)      _nsLogWithoutWarnings(format, ##__VA_ARGS__);
-#define UZKLogInfo(format, ...)  _nsLogWithoutWarnings(format, ##__VA_ARGS__);
-#define UZKLogDebug(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
+// Logging errors and faults only
+#define UZKLog(format, ...)      (void)0;
+#define UZKLogInfo(format, ...)  (void)0;
+#define UZKLogDebug(format, ...) (void)0;
 #define UZKLogError(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
 #define UZKLogFault(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
 
