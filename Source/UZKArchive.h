@@ -176,7 +176,7 @@ extern NSString *UZKErrorDomain;
  *  for nil before assigning it to avoid concurrency conflicts.
  */
 @property(nullable, strong) NSProgress *progress;
-
+@property(assign) BOOL progressIgnore;
 
 /**
  *  DEPRECATED: Creates and returns an archive at the given path
