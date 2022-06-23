@@ -2801,6 +2801,9 @@ compressionMethod:(UZKCompressionMethod)method
 
 - (NSProgress *)beginProgressOperation:(unsigned long long)totalUnitCount
 {
+    if(self.progressIgnore){
+        return nil;
+    }
     UZKCreateActivity("-beginProgressOperation:");
     
     NSProgress *progress;
